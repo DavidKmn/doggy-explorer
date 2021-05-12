@@ -11,6 +11,8 @@ import ApiClient
 import ApiClientLive
 import ImageRetrievalClient
 import ImageRetrievalClientLive
+import BreedPhotosDisplayFeature
+import BreedsListFeature
 
 struct Environment {
     var apiClient: ApiClient

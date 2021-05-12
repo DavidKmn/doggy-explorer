@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-#if os(macOS)
-import AppKit
-public typealias CrossPlatformImage = NSImage
-#else
+//#if os(macOS)
+//import AppKit
+//public typealias CrossPlatformImage = NSImage
+//#else
 import UIKit
 public typealias CrossPlatformImage = UIImage
-#endif
+//#endif
 
 public struct ImageRetrievalClient {
     public init(

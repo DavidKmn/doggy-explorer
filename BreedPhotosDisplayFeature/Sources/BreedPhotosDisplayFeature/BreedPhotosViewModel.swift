@@ -10,12 +10,12 @@ import Combine
 import ApiClient
 import ImageRetrievalClient
 
-struct BreedPhotoModel: Equatable, Hashable {
-    static func == (lhs: BreedPhotoModel, rhs: BreedPhotoModel) -> Bool {
+public struct BreedPhotoModel: Equatable, Hashable {
+    public static func == (lhs: BreedPhotoModel, rhs: BreedPhotoModel) -> Bool {
         lhs.url == rhs.url
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(url)
     }
     
@@ -28,7 +28,7 @@ struct BreedPhotoModel: Equatable, Hashable {
     let task: AnyPublisher<CrossPlatformImage, ImageRetrievalClient.Error>
 }
 
-enum BreedPhotosState: Equatable {
+public enum BreedPhotosState: Equatable {
     case initial(breedName: String)
     
     case loadingImageUrls
@@ -46,13 +46,13 @@ extension BreedPhotosState {
     }
 }
 
-enum BreedPhotosEvent {
+public enum BreedPhotosEvent {
     case onViewDidLoad
     case downloadPhotoUrlsResponse(Result<[String], ApiClient.Error>)
     case prepareImageDownloads([BreedPhotoModel])
 }
 
-struct BreedPhotosSideEffects {
+public struct BreedPhotosSideEffects {
     public init(
         api: ApiClient,
         imageRetrievalClient: ImageRetrievalClient
@@ -77,9 +77,9 @@ struct BreedPhotosSideEffects {
     }
 }
 
-typealias BreedPhotosReducer = (inout BreedPhotosState, BreedPhotosEvent) -> Void
+public typealias BreedPhotosReducer = (inout BreedPhotosState, BreedPhotosEvent) -> Void
 
-final class BreedPhotosViewModel: ObservableObject {
+public final class BreedPhotosViewModel: ObservableObject {
     
     @Published private(set) var state: BreedPhotosState
     private var cancellables = Set<AnyCancellable>()
@@ -90,7 +90,7 @@ final class BreedPhotosViewModel: ObservableObject {
     private let breedName: String
     private let photosCount: Int
     
-    init(
+    public init(
         breedName: String,
         initialState: BreedPhotosState,
         photosCount: Int = 10,
@@ -129,7 +129,7 @@ final class BreedPhotosViewModel: ObservableObject {
 }
 
 extension BreedPhotosState {
-    static func reduce(state: inout Self, event: BreedPhotosEvent) {
+    public static func reduce(state: inout Self, event: BreedPhotosEvent) {
         switch event {
         case .onViewDidLoad:
             state = .loadingImageUrls
@@ -148,5 +148,13 @@ extension Sequence where Element: Hashable {
     func uniqued() -> [Element] {
         var set = Set<Element>()
         return filter { set.insert($0).inserted }
+    }
+}
+
+extension Publisher {
+    func convertToResult() -> AnyPublisher<Result<Output, Failure>, Never> {
+        self.map(Result.success)
+            .catch { Just(.failure($0)) }
+            .eraseToAnyPublisher()
     }
 }

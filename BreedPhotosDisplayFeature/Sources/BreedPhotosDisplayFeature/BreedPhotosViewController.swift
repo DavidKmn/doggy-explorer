@@ -22,7 +22,7 @@ private func createLayout() -> UICollectionViewCompositionalLayout {
     return .init(section: NSCollectionLayoutSection(group: group))
 }
 
-final class BreedPhotosViewController: UIViewController {
+public final class BreedPhotosViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = { [unowned self] in
         let cv = UICollectionView(frame: view.frame, collectionViewLayout: createLayout())
@@ -35,7 +35,7 @@ final class BreedPhotosViewController: UIViewController {
     private let viewModel: BreedPhotosViewModel
     private var cancellables: Set<AnyCancellable> = []
 
-    init(viewModel: BreedPhotosViewModel) {
+    public init(viewModel: BreedPhotosViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -66,7 +66,7 @@ final class BreedPhotosViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupCollectionDataSource()
@@ -120,4 +120,22 @@ final class BreedPhotosViewController: UIViewController {
         snapshot.appendItems(models, toSection: 1)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
+}
+
+extension UICollectionReusableView {
+    public class var reuseIdentifier: String {
+        return String(describing: self)
+    }
+}
+
+extension UICollectionView {
+    
+    public func dequeReusableCell<Cell: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> Cell {
+        return dequeueReusableCell(withReuseIdentifier: Cell.reuseIdentifier, for: indexPath) as! Cell
+    }
+    
+    public func register(cellClass: AnyClass) {
+        self.register(cellClass, forCellWithReuseIdentifier: ((cellClass) as! UICollectionViewCell.Type).reuseIdentifier)
+    }
+    
 }

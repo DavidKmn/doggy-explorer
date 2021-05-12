@@ -8,14 +8,15 @@
 import Foundation
 import UIKit
 import Combine
+import iOSUIComponents
 
-final class BreedListViewController: UIViewController {
+public final class BreedListViewController: UIViewController {
     
     private var dataSource: [Breed] = []
     private let viewModel: BreedListViewModel
     private var cancellables: Set<AnyCancellable> = []
 
-    init(viewModel: BreedListViewModel) {
+    public init(viewModel: BreedListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,14 +38,14 @@ final class BreedListViewController: UIViewController {
     
     private let loadingView = ActivityIndicatorLoadingView(style: .large, color: .systemGray)
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
         viewModel.accept(event: .onViewDidLoad)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.accept(event: .onViewWillAppear)
     }
@@ -107,19 +108,19 @@ extension BreedListViewController {
 
 extension BreedListViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.accept(event: .onDidSelectBreedAtIndex(indexPath.row))
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dataSource.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BreedListTableViewCell = tableView.dequeReusableCell(forIndexPath: indexPath)
         cell.set(with: dataSource[indexPath.row])
         return cell

@@ -9,14 +9,13 @@ import Foundation
 import Combine
 import ApiClient
 
-public typealias SubBreedName = String
-
-struct Breed {
-    let name: String
-    let subBreedNames: [SubBreedName]
+public struct Breed {
+    public let name: String
+    public let subBreedNames: [SubBreedName]
+    public typealias SubBreedName = String
 }
 
-enum BreedListState {
+public enum BreedListState {
     case initial(moduleTitle: String)
     case loading
     case failed
@@ -30,15 +29,19 @@ extension BreedListState {
     }
 }
 
-enum BreedListEvent {
+public enum BreedListEvent {
     case onViewDidLoad
     case onViewWillAppear
     case onDidSelectBreedAtIndex(Int)
     case downloadBreedsResponse(Result<[Breed], ApiClient.Error>)
 }
 
-struct BreedListSideEffects {
-    let api: ApiClient
+public struct BreedListSideEffects {
+    public let api: ApiClient
+    
+    public init(api: ApiClient) {
+        self.api = api
+    }
     
     func downloadAllBreeds() -> AnyPublisher<BreedListEvent, Never> {
         api.fetchAllBreeds()
@@ -56,17 +59,17 @@ extension Result where Success == [ApiClient.Breed], Failure == ApiClient.Error 
     }
 }
 
-typealias BreedListReducer = (inout BreedListState, BreedListEvent) -> Void
+public typealias BreedListReducer = (inout BreedListState, BreedListEvent) -> Void
 
-final class BreedListViewModel: ObservableObject {
+public final class BreedListViewModel: ObservableObject {
     
-    @Published private(set) var state: BreedListState
+    @Published public private(set) var state: BreedListState
     private var cancellables = Set<AnyCancellable>()
     
     private let sideEffects: BreedListSideEffects
     private let reducer: BreedListReducer
     
-    init(
+    public init(
         initialState: BreedListState = .initial(moduleTitle: "Breeds 🐕"),
         reducer: @escaping BreedListReducer,
         sideEffects: BreedListSideEffects
@@ -98,7 +101,7 @@ final class BreedListViewModel: ObservableObject {
 }
 
 extension BreedListState {
-    static func reduce(state: inout Self, event: BreedListEvent) {
+    public static func reduce(state: inout Self, event: BreedListEvent) {
         switch event {
         case .onViewDidLoad:
             state = .loading
@@ -120,7 +123,6 @@ extension BreedListState {
         }
     }
 }
-
 
 extension Publisher {
     func convertToResult() -> AnyPublisher<Result<Output, Failure>, Never> {

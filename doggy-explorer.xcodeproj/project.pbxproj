@@ -11,44 +11,29 @@
 		77129596264C2BF500890545 /* ApiClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = 77129595264C2BF500890545 /* ApiClientLive */; };
 		778C84F7264C31E40021FF14 /* ImageRetrievalClient in Frameworks */ = {isa = PBXBuildFile; productRef = 778C84F6264C31E40021FF14 /* ImageRetrievalClient */; };
 		778C84FE264C32380021FF14 /* ImageRetrievalClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = 778C84FD264C32380021FF14 /* ImageRetrievalClientLive */; };
+		778C8519264C3A320021FF14 /* BreedPhotosDisplayFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 778C8518264C3A320021FF14 /* BreedPhotosDisplayFeature */; };
+		778C8528264C3CA50021FF14 /* BreedsListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 778C8527264C3CA50021FF14 /* BreedsListFeature */; };
 		77D2D038264AFB390072D6C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2D037264AFB390072D6C4 /* AppDelegate.swift */; };
 		77D2D03A264AFB390072D6C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2D039264AFB390072D6C4 /* SceneDelegate.swift */; };
-		77D2D03C264AFB390072D6C4 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2D03B264AFB390072D6C4 /* UITableView+Ext.swift */; };
 		77D2D03F264AFB390072D6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77D2D03D264AFB390072D6C4 /* Main.storyboard */; };
 		77D2D041264AFB390072D6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D2D040264AFB390072D6C4 /* Assets.xcassets */; };
 		77D2D044264AFB390072D6C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77D2D042264AFB390072D6C4 /* LaunchScreen.storyboard */; };
-		77D2D051264AFDF20072D6C4 /* BreedsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2D050264AFDF20072D6C4 /* BreedsListViewController.swift */; };
-		77D2D054264AFE0D0072D6C4 /* BreedPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2D053264AFE0D0072D6C4 /* BreedPhotosViewController.swift */; };
-		77D2D057264AFE1C0072D6C4 /* BreedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2D056264AFE1C0072D6C4 /* BreedListViewModel.swift */; };
-		77D2D06A264AFF5F0072D6C4 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D2D069264AFF5F0072D6C4 /* UICollectionView+Ext.swift */; };
-		77DBE907264B322A003A1CFF /* BreedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE906264B322A003A1CFF /* BreedListTableViewCell.swift */; };
-		77DBE90D264B326B003A1CFF /* ActivityIndicatorLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE90C264B326B003A1CFF /* ActivityIndicatorLoadingView.swift */; };
-		77DBE910264B3285003A1CFF /* CALayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE90F264B3285003A1CFF /* CALayer+Ext.swift */; };
-		77DBE915264B5190003A1CFF /* BreedPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE914264B5190003A1CFF /* BreedPhotosCollectionViewCell.swift */; };
-		77DBE91F264B5668003A1CFF /* BreedPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE91E264B5668003A1CFF /* BreedPhotosViewModel.swift */; };
 		77DBE927264C1298003A1CFF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE926264C1298003A1CFF /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		778C8502264C32AB0021FF14 /* ApiClient */ = {isa = PBXFileReference; lastKnownFileType = text; path = ApiClient; sourceTree = SOURCE_ROOT; };
 		778C8503264C32AB0021FF14 /* ImageRetrievalClient */ = {isa = PBXFileReference; lastKnownFileType = text; path = ImageRetrievalClient; sourceTree = SOURCE_ROOT; };
+		778C8506264C33F70021FF14 /* BreedPhotosDisplayFeature */ = {isa = PBXFileReference; lastKnownFileType = text; path = BreedPhotosDisplayFeature; sourceTree = SOURCE_ROOT; };
+		778C850C264C37940021FF14 /* iOSUIComponents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iOSUIComponents; sourceTree = "<group>"; };
+		778C8520264C3BC40021FF14 /* BreedsListFeature */ = {isa = PBXFileReference; lastKnownFileType = text; path = BreedsListFeature; sourceTree = SOURCE_ROOT; };
 		77D2D034264AFB390072D6C4 /* doggy-explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "doggy-explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D2D037264AFB390072D6C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77D2D039264AFB390072D6C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77D2D03B264AFB390072D6C4 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		77D2D03E264AFB390072D6C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77D2D040264AFB390072D6C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77D2D043264AFB390072D6C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77D2D045264AFB390072D6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77D2D050264AFDF20072D6C4 /* BreedsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsListViewController.swift; sourceTree = "<group>"; };
-		77D2D053264AFE0D0072D6C4 /* BreedPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPhotosViewController.swift; sourceTree = "<group>"; };
-		77D2D056264AFE1C0072D6C4 /* BreedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewModel.swift; sourceTree = "<group>"; };
-		77D2D069264AFF5F0072D6C4 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
-		77DBE906264B322A003A1CFF /* BreedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListTableViewCell.swift; sourceTree = "<group>"; };
-		77DBE90C264B326B003A1CFF /* ActivityIndicatorLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorLoadingView.swift; sourceTree = "<group>"; };
-		77DBE90F264B3285003A1CFF /* CALayer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Ext.swift"; sourceTree = "<group>"; };
-		77DBE914264B5190003A1CFF /* BreedPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
-		77DBE91E264B5668003A1CFF /* BreedPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPhotosViewModel.swift; sourceTree = "<group>"; };
 		77DBE926264C1298003A1CFF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,10 +42,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778C8528264C3CA50021FF14 /* BreedsListFeature in Frameworks */,
 				778C84FE264C32380021FF14 /* ImageRetrievalClientLive in Frameworks */,
 				77129592264C24DF00890545 /* ApiClient in Frameworks */,
 				778C84F7264C31E40021FF14 /* ImageRetrievalClient in Frameworks */,
 				77129596264C2BF500890545 /* ApiClientLive in Frameworks */,
+				778C8519264C3A320021FF14 /* BreedPhotosDisplayFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,59 +81,20 @@
 		77D2D036264AFB390072D6C4 /* doggy-explorer */ = {
 			isa = PBXGroup;
 			children = (
+				778C8520264C3BC40021FF14 /* BreedsListFeature */,
+				778C850C264C37940021FF14 /* iOSUIComponents */,
+				778C8506264C33F70021FF14 /* BreedPhotosDisplayFeature */,
 				778C8502264C32AB0021FF14 /* ApiClient */,
 				778C8503264C32AB0021FF14 /* ImageRetrievalClient */,
 				77D2D037264AFB390072D6C4 /* AppDelegate.swift */,
 				77D2D039264AFB390072D6C4 /* SceneDelegate.swift */,
 				77DBE926264C1298003A1CFF /* AppCoordinator.swift */,
-				77D2D06D264AFFF30072D6C4 /* BreedList */,
-				77DBE917264B51EB003A1CFF /* BreedPhotos */,
-				77DBE919264B51F6003A1CFF /* Extensions */,
-				77DBE91C264B5204003A1CFF /* CustomUI */,
 				77D2D03D264AFB390072D6C4 /* Main.storyboard */,
 				77D2D040264AFB390072D6C4 /* Assets.xcassets */,
 				77D2D042264AFB390072D6C4 /* LaunchScreen.storyboard */,
 				77D2D045264AFB390072D6C4 /* Info.plist */,
 			);
 			path = "doggy-explorer";
-			sourceTree = "<group>";
-		};
-		77D2D06D264AFFF30072D6C4 /* BreedList */ = {
-			isa = PBXGroup;
-			children = (
-				77D2D050264AFDF20072D6C4 /* BreedsListViewController.swift */,
-				77DBE906264B322A003A1CFF /* BreedListTableViewCell.swift */,
-				77D2D056264AFE1C0072D6C4 /* BreedListViewModel.swift */,
-			);
-			path = BreedList;
-			sourceTree = "<group>";
-		};
-		77DBE917264B51EB003A1CFF /* BreedPhotos */ = {
-			isa = PBXGroup;
-			children = (
-				77D2D053264AFE0D0072D6C4 /* BreedPhotosViewController.swift */,
-				77DBE914264B5190003A1CFF /* BreedPhotosCollectionViewCell.swift */,
-				77DBE91E264B5668003A1CFF /* BreedPhotosViewModel.swift */,
-			);
-			path = BreedPhotos;
-			sourceTree = "<group>";
-		};
-		77DBE919264B51F6003A1CFF /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				77D2D03B264AFB390072D6C4 /* UITableView+Ext.swift */,
-				77D2D069264AFF5F0072D6C4 /* UICollectionView+Ext.swift */,
-				77DBE90F264B3285003A1CFF /* CALayer+Ext.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		77DBE91C264B5204003A1CFF /* CustomUI */ = {
-			isa = PBXGroup;
-			children = (
-				77DBE90C264B326B003A1CFF /* ActivityIndicatorLoadingView.swift */,
-			);
-			path = CustomUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +118,8 @@
 				77129595264C2BF500890545 /* ApiClientLive */,
 				778C84F6264C31E40021FF14 /* ImageRetrievalClient */,
 				778C84FD264C32380021FF14 /* ImageRetrievalClientLive */,
+				778C8518264C3A320021FF14 /* BreedPhotosDisplayFeature */,
+				778C8527264C3CA50021FF14 /* BreedsListFeature */,
 			);
 			productName = "doggy-explorer";
 			productReference = 77D2D034264AFB390072D6C4 /* doggy-explorer.app */;
@@ -227,19 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77DBE90D264B326B003A1CFF /* ActivityIndicatorLoadingView.swift in Sources */,
-				77D2D051264AFDF20072D6C4 /* BreedsListViewController.swift in Sources */,
-				77DBE915264B5190003A1CFF /* BreedPhotosCollectionViewCell.swift in Sources */,
-				77DBE910264B3285003A1CFF /* CALayer+Ext.swift in Sources */,
-				77D2D057264AFE1C0072D6C4 /* BreedListViewModel.swift in Sources */,
-				77D2D03C264AFB390072D6C4 /* UITableView+Ext.swift in Sources */,
-				77DBE907264B322A003A1CFF /* BreedListTableViewCell.swift in Sources */,
 				77D2D038264AFB390072D6C4 /* AppDelegate.swift in Sources */,
 				77D2D03A264AFB390072D6C4 /* SceneDelegate.swift in Sources */,
-				77D2D054264AFE0D0072D6C4 /* BreedPhotosViewController.swift in Sources */,
-				77DBE91F264B5668003A1CFF /* BreedPhotosViewModel.swift in Sources */,
 				77DBE927264C1298003A1CFF /* AppCoordinator.swift in Sources */,
-				77D2D06A264AFF5F0072D6C4 /* UICollectionView+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +400,14 @@
 		778C84FD264C32380021FF14 /* ImageRetrievalClientLive */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ImageRetrievalClientLive;
+		};
+		778C8518264C3A320021FF14 /* BreedPhotosDisplayFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BreedPhotosDisplayFeature;
+		};
+		778C8527264C3CA50021FF14 /* BreedsListFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BreedsListFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

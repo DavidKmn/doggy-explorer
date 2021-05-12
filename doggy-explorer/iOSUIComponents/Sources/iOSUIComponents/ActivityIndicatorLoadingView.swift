@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class ActivityIndicatorLoadingView: UIView {
+public final class ActivityIndicatorLoadingView: UIView {
     
-    init(style: UIActivityIndicatorView.Style, color: UIColor = .white) {
+    public init(style: UIActivityIndicatorView.Style, color: UIColor = .white) {
         activityIndicator = UIActivityIndicatorView(style: style)
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = color
@@ -29,12 +29,12 @@ final class ActivityIndicatorLoadingView: UIView {
         stop()
     }
             
-    func start() {
+    public func start() {
         isHidden = false
         activityIndicator.startAnimating()
     }
     
-    func stop() {
+    public func stop() {
         isHidden = true
         activityIndicator.stopAnimating()
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import iOSUIComponents
 
 final class BreedPhotosCollectionViewCell: UICollectionViewCell {
     
