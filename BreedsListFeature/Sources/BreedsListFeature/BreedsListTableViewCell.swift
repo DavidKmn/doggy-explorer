@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BreedListTableViewCell: UITableViewCell {
+final class BreedsListTableViewCell: UITableViewCell {
     
     private let cardView: UIView = {
         let view = UIView()

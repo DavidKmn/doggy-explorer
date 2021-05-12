@@ -29,7 +29,7 @@ public final class BreedListViewController: UIViewController {
         let tv = UITableView(frame: view.frame, style: .plain)
         tv.showsVerticalScrollIndicator = false
         tv.separatorStyle = .none
-        tv.register(cellClass: BreedListTableViewCell.self)
+        tv.register(cellClass: BreedsListTableViewCell.self)
         tv.backgroundColor = UIColor.systemBackground
         tv.dataSource = self
         tv.delegate = self
@@ -86,7 +86,7 @@ public final class BreedListViewController: UIViewController {
 }
 
 extension BreedListViewController {
-    func update(_ state: BreedListState) {
+    func update(_ state: BreedsListState) {
         somethingWentWrongImageView.isHidden = true
         switch state {
         case .initial(moduleTitle: let title):
@@ -121,7 +121,7 @@ extension BreedListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: BreedListTableViewCell = tableView.dequeReusableCell(forIndexPath: indexPath)
+        let cell: BreedsListTableViewCell = tableView.dequeReusableCell(forIndexPath: indexPath)
         cell.set(with: dataSource[indexPath.row])
         return cell
     }

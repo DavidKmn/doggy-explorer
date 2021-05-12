@@ -15,38 +15,38 @@ public struct Breed {
     public typealias SubBreedName = String
 }
 
-public enum BreedListState {
+public enum BreedsListState {
     case initial(moduleTitle: String)
     case loading
     case failed
     case loaded([Breed], navigatedTo: Int?)
 }
 
-extension BreedListState {
+extension BreedsListState {
     var loadQuery: Bool {
         guard case .loading = self else { return false }
         return true
     }
 }
 
-public enum BreedListEvent {
+public enum BreedsListEvent {
     case onViewDidLoad
     case onViewWillAppear
     case onDidSelectBreedAtIndex(Int)
     case downloadBreedsResponse(Result<[Breed], ApiClient.Error>)
 }
 
-public struct BreedListSideEffects {
+public struct BreedsListSideEffects {
     public let api: ApiClient
     
     public init(api: ApiClient) {
         self.api = api
     }
     
-    func downloadAllBreeds() -> AnyPublisher<BreedListEvent, Never> {
+    func downloadAllBreeds() -> AnyPublisher<BreedsListEvent, Never> {
         api.fetchAllBreeds()
             .convertToResult()
-            .map({ BreedListEvent.downloadBreedsResponse($0.toDomain()) })
+            .map({ BreedsListEvent.downloadBreedsResponse($0.toDomain()) })
             .eraseToAnyPublisher()
     }
 }
@@ -59,20 +59,20 @@ extension Result where Success == [ApiClient.Breed], Failure == ApiClient.Error 
     }
 }
 
-public typealias BreedListReducer = (inout BreedListState, BreedListEvent) -> Void
+public typealias BreedListReducer = (inout BreedsListState, BreedsListEvent) -> Void
 
 public final class BreedListViewModel: ObservableObject {
     
-    @Published public private(set) var state: BreedListState
+    @Published public private(set) var state: BreedsListState
     private var cancellables = Set<AnyCancellable>()
     
-    private let sideEffects: BreedListSideEffects
+    private let sideEffects: BreedsListSideEffects
     private let reducer: BreedListReducer
     
     public init(
-        initialState: BreedListState = .initial(moduleTitle: "Breeds 🐕"),
+        initialState: BreedsListState = .initial(moduleTitle: "Breeds 🐕"),
         reducer: @escaping BreedListReducer,
-        sideEffects: BreedListSideEffects
+        sideEffects: BreedsListSideEffects
     ) {
         self.state = initialState
         self.reducer = reducer
@@ -86,22 +86,22 @@ public final class BreedListViewModel: ObservableObject {
             .removeDuplicates()
             .filter({ $0 == true })
             .map { _ in () }
-            .receive(on: DispatchQueue.main)
             .flatMap({ [sideEffects] _ in
                 sideEffects.downloadAllBreeds()
             })
+            .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] e in
                 self?.accept(event: e)
             })
     }
     
-    func accept(event: BreedListEvent) {
+    func accept(event: BreedsListEvent) {
         reducer(&state, event)
     }
 }
 
-extension BreedListState {
-    public static func reduce(state: inout Self, event: BreedListEvent) {
+extension BreedsListState {
+    public static func reduce(state: inout Self, event: BreedsListEvent) {
         switch event {
         case .onViewDidLoad:
             state = .loading

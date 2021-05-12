@@ -118,6 +118,7 @@ public final class BreedPhotosViewModel: ObservableObject {
                     return Just(BreedPhotosEvent.prepareImageDownloads(models)).eraseToAnyPublisher()
                 }
             })
+            .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] e in
                 self?.accept(event: e)
             })

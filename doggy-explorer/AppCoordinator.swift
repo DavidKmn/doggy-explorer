@@ -77,7 +77,7 @@ final class AppCoordinator {
     
     private func startBreedListModule() {
         let breedListViewModel = BreedListViewModel.init(
-            reducer: BreedListState.reduce(state:event:),
+            reducer: BreedsListState.reduce(state:event:),
             sideEffects: .init(api: .live())
         )
         breedListViewModel
@@ -94,7 +94,7 @@ final class AppCoordinator {
     }
 }
 
-fileprivate extension BreedListState {
+fileprivate extension BreedsListState {
     var breedNameSelected: String? {
         if case .loaded(let data, let indexToNavigateTo) = self {
             if let idx = indexToNavigateTo {
