@@ -1,11 +1,6 @@
 
 # doggy-explorer
 
-## UI/UX Design
-
-I went with the Human Interface Guidelines from apple on this one using their colours for backgrounds/labels... 
-Tried to go with a quiet simple but "apple style" design. 
-
 ## Architecture
 
 The way I approached this app is to use a reactive (Combine driven) MVVM + Coordinator architecture. The architecture is unidirectional and is focused on managing state from 1 area (the view model). The view model is the source of truth for a particular feature and is the one to change the state and react to events in the system. This approach is used in both the BreedsListFeature and the BreedPhotosDisplayFeature. Coordinator acts as the DI manager + controls routing for the main app. 
