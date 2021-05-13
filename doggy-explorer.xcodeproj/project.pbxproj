@@ -22,10 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7787A95A264DB5D400DF4989 /* iOSUIComponents */ = {isa = PBXFileReference; lastKnownFileType = text; path = iOSUIComponents; sourceTree = SOURCE_ROOT; };
 		778C8502264C32AB0021FF14 /* ApiClient */ = {isa = PBXFileReference; lastKnownFileType = text; path = ApiClient; sourceTree = SOURCE_ROOT; };
 		778C8503264C32AB0021FF14 /* ImageRetrievalClient */ = {isa = PBXFileReference; lastKnownFileType = text; path = ImageRetrievalClient; sourceTree = SOURCE_ROOT; };
 		778C8506264C33F70021FF14 /* BreedPhotosDisplayFeature */ = {isa = PBXFileReference; lastKnownFileType = text; path = BreedPhotosDisplayFeature; sourceTree = SOURCE_ROOT; };
-		778C850C264C37940021FF14 /* iOSUIComponents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iOSUIComponents; sourceTree = "<group>"; };
 		778C8520264C3BC40021FF14 /* BreedsListFeature */ = {isa = PBXFileReference; lastKnownFileType = text; path = BreedsListFeature; sourceTree = SOURCE_ROOT; };
 		77D2D034264AFB390072D6C4 /* doggy-explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "doggy-explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D2D037264AFB390072D6C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,8 +81,8 @@
 		77D2D036264AFB390072D6C4 /* doggy-explorer */ = {
 			isa = PBXGroup;
 			children = (
+				7787A95A264DB5D400DF4989 /* iOSUIComponents */,
 				778C8520264C3BC40021FF14 /* BreedsListFeature */,
-				778C850C264C37940021FF14 /* iOSUIComponents */,
 				778C8506264C33F70021FF14 /* BreedPhotosDisplayFeature */,
 				778C8502264C32AB0021FF14 /* ApiClient */,
 				778C8503264C32AB0021FF14 /* ImageRetrievalClient */,
