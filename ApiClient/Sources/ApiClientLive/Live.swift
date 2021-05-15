@@ -34,6 +34,19 @@ extension ApiClient {
             .eraseToAnyPublisher()
     }
     
+    private static func fetchRandomImageUrls(baseUrl: URL, breed: String, count: Int) -> AnyPublisher<[String], ApiClient.Error> {
+        URLSession.shared.dataTaskPublisher(for: baseUrl.appendingPathComponent("/breed/\(breed)/images/random/\(count)"))
+            .map(\.data)
+            .decode(type: RandomImagesInfoForBreedResponse.self, decoder: decoder)
+            .mapToApiError()
+            .flatMap({ data -> Result<[String], ApiClient.Error>.Publisher in
+                if data.status == .success {
+                    return .init(.success(data.urls))
+                }
+                return .init(.failure(ApiClient.Error.badStatus))
+            })
+            .eraseToAnyPublisher()
+    }
     
     public static func live(baseUrl: URL = URL("https://dog.ceo/api")) -> Self {
         return .init(
@@ -53,13 +66,17 @@ extension ApiClient {
                     .eraseToAnyPublisher()
             },
             fetchPhotoUrlsForBreed: { breed, count in
-                Publishers.Sequence(sequence: (0..<count).map { (_) in
-                    return fetchRandomImageUrl(baseUrl: baseUrl, breed: breed)
-                })
-                .flatMap { $0 }
-                .collect()
+                fetchRandomImageUrls(baseUrl: baseUrl, breed: breed, count: count)
                 .eraseToAnyPublisher()
             }
+//            fetchPhotoUrlsForBreed: { breed, count in
+//                Publishers.Sequence(sequence: (0..<count).map { (_) in
+//                    return fetchRandomImageUrl(baseUrl: baseUrl, breed: breed)
+//                })
+//                .flatMap { $0 }
+//                .collect()
+//                .eraseToAnyPublisher()
+//            }
         )
     }
 }

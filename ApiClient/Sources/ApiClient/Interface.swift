@@ -23,6 +23,16 @@ public struct RandomImageInfoForBreedResponse: Equatable, Decodable {
     }
 }
 
+public struct RandomImagesInfoForBreedResponse: Equatable, Decodable {
+    public let urls: [String]
+    public let status: Status
+    
+    private enum CodingKeys: String, CodingKey {
+        case urls = "message"
+        case status
+    }
+}
+
 public enum Status: String, Equatable, Decodable {
     case success
     case failure
